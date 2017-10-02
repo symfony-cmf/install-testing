@@ -25,6 +25,15 @@ function installBundle() {
     REQUIRE=${PACKAGE_NAME}":"${VERSION}
     echo "+++ Require bundle ${REQUIRE} +++"
     composer req "${REQUIRE}"
+    OUT=$?
+    if [ ${OUT} -eq 0 ];then
+       echo "+++ Install is fine +++"
+       exit 0
+    else
+       echo "+++ Problems to install package +++"
+       exit ${OUT}
+    fi
+    echo $?
     echo "+++ We should fetch composer exit code here +++"
 }
 
