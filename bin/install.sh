@@ -3,17 +3,16 @@
 usage="$(basename "$0") [-hl] [-t] -- Script to test a bundle installation with on a symfony application.
     where:
         -h  show help text
-        -b  The  complete package name of the bundle;"
+        -p  The  complete package name of the bundle;"
 
 BASE_DIR=${PWD}
 BUILD_DIR=${BASE_DIR}/build
 
-BUNDLE_NAME=''
-ORGANISATION=''
+PACKAGE_NAME=''
 VERSION='dev-master'
 
 function installBundle() {
-    DIR=${BUILD_DIR}/${ORGANISATION}/${BUNDLE_NAME}
+    DIR=${PACKAGE_NAME}
 
     mkdir -p ${DIR}
     echo "Create directory ${DIR}"
@@ -21,19 +20,19 @@ function installBundle() {
     echo "+++ Create Symfony skeleton app +++ "
     composer create-project "symfony/skeleton:^3.3" test-app
     cd test-app/
+    composer config extra.symfony.allow-contrib true
     composer req cli
-    REQUIRE=${ORGANISATION}"/"${BUNDLE_NAME}":"${VERSION}
+    REQUIRE=${PACKAGE_NAME}":"${VERSION}
     echo "+++ Require bundle ${REQUIRE} +++"
     composer req "${REQUIRE}"
     echo "+++ We should fetch composer exit code here +++"
 }
 
-while getopts :hvb:o: option
+while getopts :hv:b: option
 do
     case "${option}"
     in
-        b) BUNDLE_NAME=${OPTARG};;
-        o) ORGANISATION=${OPTARG};;
+        p) PACKAGE_NAME=${OPTARG};;
         v) VERSION=${OPTARG};;
         h) echo "${usage}"
            exit 1

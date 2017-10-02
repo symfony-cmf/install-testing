@@ -7,5 +7,5 @@ symfony skeleton app.
 
 # Usage
 
-run `./bin/run.sh` to test all symfony-cmf bundles or run `./bin/install.sh -b[bundle-name] -o[organisation] -v[version]`
+run `./bin/install.sh -p[package-name] -v[version]`
 to install an explicit bundle/component.
