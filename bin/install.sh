@@ -28,7 +28,7 @@ function installBundle() {
     echo "+++ We should fetch composer exit code here +++"
 }
 
-while getopts :hv:b: option
+while getopts :hv:p: option
 do
     case "${option}"
     in
