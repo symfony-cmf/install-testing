@@ -12,7 +12,7 @@ PACKAGE_NAME=''
 VERSION='dev-master'
 
 function installBundle() {
-    DIR=${PACKAGE_NAME}/${VERSION}
+    DIR=${PACKAGE_NAME}
 
     mkdir -p ${DIR}
     echo "Create directory ${DIR}"
