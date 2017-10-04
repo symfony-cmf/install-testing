@@ -24,7 +24,7 @@ function installBundle() {
     composer req cli
     REQUIRE=${PACKAGE_NAME}":"${VERSION}
     echo "+++ Require bundle ${REQUIRE} +++"
-    composer req "${REQUIRE}"
+    composer req -n "${REQUIRE}"
     OUT=$?
     if [ ${OUT} -eq 0 ];then
        echo "+++ Install is fine +++"
