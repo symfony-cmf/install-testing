@@ -27,6 +27,8 @@ matrix:
         - env: TEST_PACKAGE="symfony-cmf/resource-rest-bundle" TEST_VERSION="dev-master"
         - env: TEST_PACKAGE="symfony-cmf/resource-bundle" TEST_VERSION="dev-master"
         - env: TEST_PACKAGE="symfony-cmf/sonata-phpcr-admin-integration-bundle" TEST_VERSION="dev-master"
+        - env: TEST_PACKAGE="doctrine/phpcr-bundle" TEST_VERSION="^1.4"
+        - env: TEST_PACKAGE="doctrine/phpcr-bundle" TEST_VERSION="dev-master"
 
 cache:
   directories:
