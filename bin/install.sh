@@ -22,6 +22,7 @@ function installBundle() {
     cd test-app/
     composer config extra.symfony.allow-contrib true
     composer req cli
+    if [ "${VERSION}" = "dev"* ]; then perl -pi -e 's/^}$/,"minimum-stability":"dev"}/' composer.json; fi
     REQUIRE=${PACKAGE_NAME}":"${VERSION}
     echo "+++ Require bundle ${REQUIRE} +++"
     composer req -n "${REQUIRE}"
