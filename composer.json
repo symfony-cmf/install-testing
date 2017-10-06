@@ -1,0 +1,15 @@
+{
+    "name": "symfony-cmf/install-testing",
+    "description": "to have a travis run for all our bundles",
+    "type": "library",
+    "require": {
+        "symfony-cmf/testing": "^2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ElectricMaxxx",
+            "email": "maximilian.berghoff@gmx.de"
+        }
+    ]
+}
