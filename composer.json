@@ -3,7 +3,7 @@
     "description": "to have a travis run for all our bundles",
     "type": "library",
     "require": {
-        "symfony-cmf/testing": "^2.0"
+        "symfony-cmf/testing": "dev-testing_scripts"
     },
     "license": "MIT",
     "authors": [
@@ -11,5 +11,6 @@
             "name": "ElectricMaxxx",
             "email": "maximilian.berghoff@gmx.de"
         }
-    ]
+    ],
+    "minimum-stability":"dev"
 }
