@@ -27,7 +27,7 @@ before_install: composer self-update
 
 install: travis_wait composer update --prefer-dist $COMPOSER_FLAGS
 
-script: ./vendor/symfony-cmf/testing/bin/make/check_install.sh -p${TEST_PACKAGE} -v${TEST_VERSION}
+script: ./vendor/symfony-cmf/testing/bin/scripts/check_install.sh -p${TEST_PACKAGE} -v${TEST_VERSION}
 
 notifications:
   irc: "irc.freenode.org#symfony-cmf"
