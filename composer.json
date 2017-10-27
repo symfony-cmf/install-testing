@@ -3,7 +3,7 @@
     "description": "to have a travis run for all our bundles",
     "type": "library",
     "require": {
-        "symfony-cmf/testing": "dev-testing_scripts"
+        "symfony-cmf/testing": "^2.1@dev"
     },
     "license": "MIT",
     "authors": [
